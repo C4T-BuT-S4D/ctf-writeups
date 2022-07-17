@@ -1,0 +1,25 @@
+version: "2.2"
+# ipv6 is not supported in version 3
+
+services:
+  app:
+    restart: unless-stopped
+    image: faust.cs.fau.de:5000/notes-from-the-future
+    init: true
+    build: src/app
+    volumes:
+      - notes:/notes
+    ports:
+      - "$APP_PORT:$APP_PORT"
+    env_file: .env
+
+volumes:
+  notes:
+
+networks:
+  default:
+    enable_ipv6: true
+    ipam:
+      driver: default
+      config:
+        - subnet: "fd42:d0ce:7331::/64"
