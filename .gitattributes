@@ -1,0 +1,2 @@
+justctf/2022/rev/fancy-device/task/firmware.blob filter=lfs diff=lfs merge=lfs -text
+justctf/2022/rev/fancy-device/task/unknownbin.zip filter=lfs diff=lfs merge=lfs -text
